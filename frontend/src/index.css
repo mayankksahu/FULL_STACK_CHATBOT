@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes bounce-slow {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 1s ease-out;
+}
+
+.animate-slide-up-delayed {
+  animation: slide-up 1s ease-out 0.2s backwards;
+}
+
+.animate-slide-up-delayed-2 {
+  animation: slide-up 1s ease-out 0.4s backwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s ease-in-out infinite;
+}
+
+
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.2);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 85, 247, 0.4);
+}
+
+
+/* Custom Scrollbar for Textarea */
+textarea::-webkit-scrollbar {
+  width: 6px;
+}
+
+textarea::-webkit-scrollbar-track {
+  background: rgba(10, 10, 10, 0.3);
+  border-radius: 3px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.2);
+  border-radius: 3px;
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 85, 247, 0.4);
+}
+
+/* Firefox Scrollbar Support */
+textarea {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(168, 85, 247, 0.2) rgba(10, 10, 10, 0.3);
+}
+
+
+@layer components {
+  .bg-gradient {
+    @apply bg-gradient-to-r from-accent-primary to-accent-secondary;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient;
+  }
+  
+  .btn-primary {
+    @apply px-8 py-3 bg-gradient text-white rounded-full hover:opacity-90 transition duration-300;
+  }
+  
+  .btn-secondary {
+    @apply px-8 py-3 bg-accent-blue text-white rounded-full hover:opacity-90 transition duration-300;
+  }
+}
+
+@layer utilities {
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+}
+
